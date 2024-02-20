@@ -3,24 +3,24 @@ package tyche
 type Provider string
 
 const (
+	Aura            Provider = "Aura"
 	AmericanExpress Provider = "AmericanExpress"
 	BankCard        Provider = "BankCard"
+	Cabal           Provider = "Cabal"
+	Dankort         Provider = "Dankort"
+	DinersClub      Provider = "DinersClub"
+	Discover        Provider = "Discover"
 	Elo             Provider = "Elo"
 	Hipercard       Provider = "Hipercard"
-	InterPayment    Provider = "InterPayment"
 	InstaPayment    Provider = "InstaPayment"
-	Naranja         Provider = "Naranja"
-	Dankort         Provider = "Dankort"
-	VisaElectron    Provider = "VisaElectron"
-	Aura            Provider = "Aura"
-	Cabal           Provider = "Cabal"
-	Visa            Provider = "Visa"
-	MasterCard      Provider = "MasterCard"
-	Discover        Provider = "Discover"
-	DinersClub      Provider = "DinersClub"
+	InterPayment    Provider = "InterPayment"
 	JCB             Provider = "JCB"
 	Maestro         Provider = "Maestro"
+	MasterCard      Provider = "MasterCard"
+	Naranja         Provider = "Naranja"
 	Unknown         Provider = "Unknown"
+	Visa            Provider = "Visa"
+	VisaElectron    Provider = "VisaElectron"
 )
 
 func (p Provider) String() string {
