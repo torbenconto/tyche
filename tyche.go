@@ -3,6 +3,7 @@ package tyche
 import (
 	"time"
 	"tyche/internal/luhn"
+	"tyche/internal/validator"
 )
 
 type Tyche interface {
@@ -22,5 +23,5 @@ func NewCard(number int, exp time.Time) *Card {
 }
 
 func (c *Card) IsValid() bool {
-	return luhn.LuhnCheck(c.Number)
+	return luhn.LuhnCheck(c.Number) && validator.IsExpired(c.Exp)
 }
