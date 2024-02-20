@@ -11,11 +11,11 @@ type Tyche interface {
 }
 
 type Card struct {
-	Number int
+	Number string
 	Exp    time.Time
 }
 
-func NewCard(number int, exp time.Time) *Card {
+func NewCard(number string, exp time.Time) *Card {
 	return &Card{
 		Number: number,
 		Exp:    exp,

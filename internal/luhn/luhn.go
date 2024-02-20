@@ -1,11 +1,20 @@
 package luhn
 
-func LuhnCheck(number int) bool {
+import (
+	"strconv"
+)
+
+func LuhnCheck(number string) bool {
+	cardNumber, err := strconv.Atoi(number)
+	if err != nil {
+		return false
+	}
+
 	sum := 0
 	double := false
-	for number > 0 {
-		digit := number % 10
-		number /= 10
+	for cardNumber > 0 {
+		digit := cardNumber % 10
+		cardNumber /= 10
 		if double {
 			digit *= 2
 			if digit > 9 {

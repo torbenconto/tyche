@@ -8,19 +8,19 @@ import (
 func TestCard_IsValid(t *testing.T) {
 	tests := []struct {
 		name   string
-		number int
+		number string
 		exp    string
 		want   bool
 	}{
 		{
 			name:   "valid card",
-			number: 79927398713,
+			number: "79927398713",
 			exp:    "2021-12-01",
 			want:   true,
 		},
 		{
 			name:   "invalid card",
-			number: 79927398712,
+			number: "79927398712",
 			exp:    "2021-12-01",
 			want:   false,
 		},
