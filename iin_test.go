@@ -41,6 +41,64 @@ func TestIdentifyProvider(t *testing.T) {
 			want:   JCB,
 		},
 		{
+			name:   "maestro",
+			number: "6759649826438453",
+			want:   Maestro,
+		},
+		{
+			name:   "visa electron",
+			number: "4917300800000000",
+			want:   VisaElectron,
+		},
+		{
+			name:   "aura",
+			number: "5078601870000127985",
+			want:   Aura,
+		},
+		{
+			name:   "cabal",
+			number: "5896570000000000",
+			want:   Cabal,
+		},
+		{
+			name:   "elo",
+			number: "5066991111111118",
+			want:   Elo,
+		},
+		{
+
+			name:   "hipercard",
+			number: "6062825624254001",
+			want:   Hipercard,
+		},
+		{
+			name:   "interpayment",
+			number: "6360111331111111",
+			want:   InterPayment,
+		},
+
+		{
+			name:   "instapayment",
+			number: "6388000000000000",
+
+			want: InstaPayment,
+		},
+		{
+			name:   "naranja",
+			number: "5895627820000000",
+			want:   Naranja,
+		},
+		{
+			name:   "dankort",
+			number: "5019717010103742",
+			want:   Dankort,
+		},
+		{
+			name:   "bank card",
+			number: "5610591081018250",
+			want:   BankCard,
+		},
+		{
 			name:   "unknown",
 			number: "1234567890123456",
 			want:   Unknown,
