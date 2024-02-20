@@ -9,5 +9,6 @@ const (
 	Discover        Provider = "Discover"
 	DinersClub      Provider = "DinersClub"
 	JCB             Provider = "JCB"
+	Maestro         Provider = "Maestro"
 	Unknown         Provider = "Unknown"
 )

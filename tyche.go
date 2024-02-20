@@ -2,12 +2,14 @@ package tyche
 
 import (
 	"time"
+	"tyche/internal/identifier"
 	"tyche/internal/luhn"
 	"tyche/internal/validator"
 )
 
 type Tyche interface {
 	IsValid() bool
+	IdentifyProvider() Provider
 }
 
 type Card struct {
@@ -24,4 +26,8 @@ func NewCard(number string, exp time.Time) *Card {
 
 func (c *Card) IsValid() bool {
 	return luhn.LuhnCheck(c.Number) && validator.IsExpired(c.Exp)
+}
+
+func (c *Card) IdentifyProvider() Provider {
+	return identifier.IdentifyProvider(c.Number)
 }
