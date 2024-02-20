@@ -2,6 +2,10 @@ package tyche
 
 type Provider string
 
+func (p Provider) String() string {
+	return string(p)
+}
+
 const (
 	Aura            Provider = "Aura"
 	AmericanExpress Provider = "AmericanExpress"
@@ -22,7 +26,3 @@ const (
 	Visa            Provider = "Visa"
 	VisaElectron    Provider = "VisaElectron"
 )
-
-func (p Provider) String() string {
-	return string(p)
-}
