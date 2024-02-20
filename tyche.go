@@ -7,25 +7,27 @@ import (
 
 type Tyche interface {
 	IsValid() bool
-	IdentifyProvider() Provider
+	Provider() Provider
 }
 
 type Card struct {
 	Number string
+	Cvv    string
 	Exp    time.Time
 }
 
-func NewCard(number string, exp time.Time) *Card {
+func NewCard(number, cvv string, exp time.Time) *Card {
 	return &Card{
 		Number: number,
+		Cvv:    cvv,
 		Exp:    exp,
 	}
 }
 
 func (c *Card) IsValid() bool {
-	return luhnCheck(c.Number) && validator.IsExpired(c.Exp)
+	return luhnCheck(c.Number) && validator.IsExpired(c.Exp) && len(c.Cvv) == 3
 }
 
-func (c *Card) IdentifyProvider() Provider {
+func (c *Card) Provider() Provider {
 	return identifyProvider(c.Number)
 }

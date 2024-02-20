@@ -22,3 +22,7 @@ const (
 	Maestro         Provider = "Maestro"
 	Unknown         Provider = "Unknown"
 )
+
+func (p Provider) String() string {
+	return string(p)
+}
