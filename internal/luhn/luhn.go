@@ -1,16 +1,19 @@
 package luhn
 
 func LuhnCheck(number int) bool {
-	for i := number - 1; i >= 0; i-- {
-		if i%2 == 0 {
-			continue
+	sum := 0
+	double := false
+	for number > 0 {
+		digit := number % 10
+		number /= 10
+		if double {
+			digit *= 2
+			if digit > 9 {
+				digit -= 9
+			}
 		}
-		if i*2 > 9 {
-			i = i*2 - 9
-		} else {
-			i = i * 2
-		}
+		sum += digit
+		double = !double
 	}
-
-	return number%10 == 0
+	return sum%10 == 0
 }
