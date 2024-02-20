@@ -21,14 +21,14 @@ func identifyProvider(number string) Provider {
 			return AmericanExpress
 		} else if secondDigit == '5' {
 			return JCB
+		} else if secondDigit == '6' || secondDigit == '8' || secondDigit == '9' || secondDigit == '0' {
+			return DinersClub
 		}
 	case '6':
 		if secondDigit >= '0' && secondDigit <= '5' {
 			return Discover
 		} else if secondDigit >= '4' && secondDigit <= '6' {
 			return Maestro
-		} else if secondDigit == '8' || secondDigit == '9' {
-			return DinersClub
 		}
 	}
 
