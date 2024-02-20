@@ -5,17 +5,17 @@ import "testing"
 func TestLuhnCheck(t *testing.T) {
 	tests := []struct {
 		name   string
-		number int
+		number string
 		want   bool
 	}{
 		{
 			name:   "valid number",
-			number: 79927398713,
+			number: "79927398713",
 			want:   true,
 		},
 		{
 			name:   "invalid number",
-			number: 79927398712,
+			number: "79927398712",
 			want:   false,
 		},
 	}
