@@ -1,10 +1,10 @@
-package luhn
+package tyche
 
 import (
 	"strconv"
 )
 
-func LuhnCheck(number string) bool {
+func luhnCheck(number string) bool {
 	cardNumber, err := strconv.Atoi(number)
 	if err != nil {
 		return false

@@ -2,8 +2,6 @@ package tyche
 
 import (
 	"time"
-	"tyche/internal/identifier"
-	"tyche/internal/luhn"
 	"tyche/internal/validator"
 )
 
@@ -25,9 +23,9 @@ func NewCard(number string, exp time.Time) *Card {
 }
 
 func (c *Card) IsValid() bool {
-	return luhn.LuhnCheck(c.Number) && validator.IsExpired(c.Exp)
+	return luhnCheck(c.Number) && validator.IsExpired(c.Exp)
 }
 
 func (c *Card) IdentifyProvider() Provider {
-	return identifier.IdentifyProvider(c.Number)
+	return identifyProvider(c.Number)
 }

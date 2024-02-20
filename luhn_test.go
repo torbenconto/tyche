@@ -1,6 +1,8 @@
-package luhn
+package tyche
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestLuhnCheck(t *testing.T) {
 	tests := []struct {
@@ -21,7 +23,7 @@ func TestLuhnCheck(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := LuhnCheck(tt.number); got != tt.want {
+			if got := luhnCheck(tt.number); got != tt.want {
 				t.Errorf("LuhnCheck() = %v, want %v", got, tt.want)
 			}
 		})

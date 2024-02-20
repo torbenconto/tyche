@@ -1,10 +1,8 @@
-package identifier
+package tyche
 
-import "tyche"
-
-func IdentifyProvider(number string) tyche.Provider {
+func identifyProvider(number string) Provider {
 	if len(number) == 0 {
-		return tyche.Unknown
+		return Unknown
 	}
 
 	firstDigit := number[0]
@@ -15,24 +13,24 @@ func IdentifyProvider(number string) tyche.Provider {
 
 	switch firstDigit {
 	case '4':
-		return tyche.Visa
+		return Visa
 	case '5':
-		return tyche.MasterCard
+		return MasterCard
 	case '3':
 		if secondDigit == '4' || secondDigit == '7' {
-			return tyche.AmericanExpress
+			return AmericanExpress
 		} else if secondDigit == '5' {
-			return tyche.JCB
+			return JCB
 		}
 	case '6':
 		if secondDigit >= '0' && secondDigit <= '5' {
-			return tyche.Discover
+			return Discover
 		} else if secondDigit >= '4' && secondDigit <= '6' {
-			return tyche.Maestro
+			return Maestro
 		} else if secondDigit == '8' || secondDigit == '9' {
-			return tyche.DinersClub
+			return DinersClub
 		}
 	}
 
-	return tyche.Unknown
+	return Unknown
 }
